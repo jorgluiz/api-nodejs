@@ -11,14 +11,21 @@ module.exports = app => {
     // crud usuários
     app.route('/users')
         .post(app.api.user.save)
-        .get(app.api.user.get)
+
+    app.route('/users')
+        .get(app.api.user.getAllUsers)
 
     app.route('/users/:id')
-        .put(app.api.user.save)
+        .put(app.api.user.updateUserId)
 
     app.route('/users/:id')
         .get(app.api.user.getById)
 
+    app.route('/users/:id')
+        .delete(app.api.user.removeById)
+
+
+        
 
 
     // crud prontuarios
@@ -33,7 +40,7 @@ module.exports = app => {
 
 
     app.route('/prontuarios/buscas/:cpf')
-        .delete(app.api.form.remove)
+        .delete(app.api.form.removeByCpf)
 
 
     // prontuarios all  test com req fetch

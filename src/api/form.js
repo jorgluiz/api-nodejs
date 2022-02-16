@@ -41,7 +41,7 @@ module.exports = app => {
 		}
 
 
-		//method:  insert do usuário
+	//Description:  insert do usuário
 
 		app.db('prontuarios')
 			.insert(form)
@@ -50,7 +50,7 @@ module.exports = app => {
 
 	}
 
-	//method: consultar formulário por CPF
+	//Description: consultar formulário por CPF
 
 	const getByCpf = (req, res) => {
 		app.db('prontuarios')
@@ -60,7 +60,7 @@ module.exports = app => {
 			.catch(err => res.status(500).send(err))
 	}
 
-	//method: editar formulário
+	//Description: editar formulário
 
 	const updataForm = (req, res) => {
 		const form = { ...req.body }
@@ -72,9 +72,9 @@ module.exports = app => {
 	}
 
 
-	//method: remover formulário 
+	//Description: remover formulário 
 
-	const remove = (req, res) => {
+	const removeByCpf = (req, res) => {
 		app.db('prontuarios')
 			.where({ cpf: req.params.cpf })
 			.del()
@@ -83,7 +83,7 @@ module.exports = app => {
 	}
 
 
-	// obter all prontuários
+	//Description:  obter all prontuários
 
 	// const getAllProntuarios = (req, res) => {
 	// 	app.db('prontuarios')
@@ -96,7 +96,7 @@ module.exports = app => {
 
 
 
-	return { saveForm, updataForm, getByCpf, remove }
+	return { saveForm, updataForm, getByCpf, removeByCpf }
 
 } // chave do module.exports
 

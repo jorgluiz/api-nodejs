@@ -11,7 +11,7 @@ consign({ cwd: 'src'})
     .then('./api/validation.js') // API de validações ( tem que ser importada antes das APIs)
     .then('./api')
     .then('./config/routes.js')
-    .into(app)
+    .into(app) // injetar o fluxo API 
 
 app.listen(3000, () => {
     console.log('Backend executando... port 3000')
