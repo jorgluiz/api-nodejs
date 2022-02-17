@@ -13,6 +13,11 @@ module.exports = app => {
     const save = async (req, res) => {
         const user = { ...req.body }
 
+        //validações
+        //garantir que o user não será cadastrado como ADMIN diretamente na página /signin
+        if(!req.originalUrl.startsWith('/users')) user.admin = false // validação se não tiver com /users  ( obrigatoriamente o ADMIN será false)
+        if(!req.user || !req.user.admin) user.admin = false // validação se user n estiver logado (!req.user) || se não tiver set como ADMIN (!req.user.admin)
+
         if(req.params.id) { //se o id estiver setado
             user.id = req.params.id
         }

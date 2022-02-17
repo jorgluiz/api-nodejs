@@ -56,3 +56,10 @@ arquivo .env ( guardará informações sensiveis )
 
   implementação:
   - página inicial  Dashboard 
+
+# validar cadastro de administrador
+  - garantir que usuario seja cadastrado como admin apenas em cenários corretos
+
+   fn validation:
+        if(!req.originalUrl.startsWith('/users')) user.admin = false 
+        if(!req.user || !req.user.admin) user.admin = false 
