@@ -1,0 +1,10 @@
+module.exports = {
+    authSecret: 'jjkkddoio1d456537156d289465ddfDDs1ss1',
+    db: {
+        host: '127.0.0.1',
+        port: 5432,
+        database: 'prontuario',
+        user: 'postgres',
+        password: '1234567'
+    }
+}

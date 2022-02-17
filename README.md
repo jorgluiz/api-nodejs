@@ -1,9 +1,10 @@
-implementações:
+# implementando env
 
 Auth (JWT/Access-token/Refresh-token)
 
-arquivo .env 
-será o segredo para gerar chave JWT (token)
+arquivo .env ( guardará informações sensiveis )
+- será o segredo para gerar chave JWT do (token)
+- conexão com banco de dados
 
 # what i studied
  - estruturar aplicação com express (dependencies)
@@ -48,5 +49,10 @@ será o segredo para gerar chave JWT (token)
     função simples verificar se user é admin, se for tem acesso aos serviços determinados
 
 # mongoDB
-  implementação da página inicial  Dashboard 
-  - extrair informações do banco relacional e inserir no mongoDB
+  description:
+  - extrair informações do banco relacional e insere no mongoDB
+
+  - Mongoose é uma biblioteca de Modelagem de Dados de Objeto (ODM) para MongoDB e Node. js. Ele gerencia as relações entre dados, fornece validação de esquema e é usado para traduzir entre objetos em código e a representação desses objetos no MongoDB.
+
+  implementação:
+  - página inicial  Dashboard 

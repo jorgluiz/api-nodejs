@@ -1,15 +1,10 @@
-// Update with your config settings.
-
-// Update with your config settings.
-// const {db} = require('./.env')
+// { db } destructure 
+const { db } = require('./.env')
 
 module.exports = {
     client: 'pg',
-    connection: {
-      database: 'prontuario',
-      user: 'postgres',
-      password: '1234567'
-    },
+    connection: db,
+
     pool: {
       min: 2,
       max: 10

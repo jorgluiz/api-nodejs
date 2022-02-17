@@ -29,11 +29,11 @@ module.exports = app => {
 
 
 			const formCPF = await app.db('prontuarios')
-				.where({ cpf: form.cpf}).first()
-				notExistsOrError(formCPF, 'Usuário já cadastrado')
-				
-				const formRG = await app.db('prontuarios')
-					.where({ rg: form.rg }).first()
+				.where({ cpf: form.cpf }).first()
+			notExistsOrError(formCPF, 'Usuário já cadastrado')
+
+			const formRG = await app.db('prontuarios')
+				.where({ rg: form.rg }).first()
 			notExistsOrError(formRG, 'Usuário já cadastrado')
 
 		} catch (msg) {
@@ -41,7 +41,7 @@ module.exports = app => {
 		}
 
 
-	//Description:  insert do usuário
+		//Description:  insert do usuário
 
 		app.db('prontuarios')
 			.insert(form)
@@ -55,6 +55,7 @@ module.exports = app => {
 	const getByCpf = (req, res) => {
 		app.db('prontuarios')
 			.where({ cpf: req.params.cpf })
+			// .first()
 			.select('namefull', 'nameMae', 'sus', 'cpf', 'dataNacimento', 'sexo', 'rg', 'uf', 'dataEmissao', 'endereco', 'bairro', 'cidade', 'cep', 'fone', 'obs')
 			.then(data => res.json(data))
 			.catch(err => res.status(500).send(err))
