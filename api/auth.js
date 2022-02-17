@@ -1,4 +1,4 @@
-const { authSecret } = require('../../.env')
+const { authSecret } = require('../.env')
 const jwt = require('jwt-simple')
 const bcrypt = require('bcrypt-nodejs')
 
@@ -39,7 +39,7 @@ module.exports = app => {
         })
     }
 
-    const validateToke = async (req, res) => {
+    const validateToken = async (req, res) => {
         const userData = req.body || null
         try{
             if(userData){
@@ -54,5 +54,5 @@ module.exports = app => {
         res.send(false)
     } 
 
-    return { signin, validateToke }
+    return { signin, validateToken }
 }

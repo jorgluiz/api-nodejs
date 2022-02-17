@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon",
     "production": "pm2 start index.js --name knowledge-backend"
   },
   "keywords": [],
@@ -18,7 +18,7 @@
     "body-parser": "^1.19.1",
     "consign": "^0.1.6",
     "cors": "^2.8.5",
-    "express": "^4.17.2",
+    "express": "^4.16.3",
     "jwt-simple": "^0.5.6",
     "knex": "^0.21.1",
     "moment": "^2.29.1",

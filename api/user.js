@@ -20,7 +20,7 @@ module.exports = app => {
             existsOrError(user.username, 'Nome não informado')
             existsOrError(user.email, 'E-mail não informado')
             existsOrError(user.password, 'Senha nao informada')
-            existsOrError(user.confirmPassword, 'Confirmação de senha indálida')
+            existsOrError(user.confirmPassword, 'Confirmação de senha inválida')
             equalsOrError(user.password, user.confirmPassword, 'Senha não conferem')
 
             const userForm = await app.db('users')

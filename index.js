@@ -6,7 +6,8 @@ const db = require('./config/db')
 // colocando conexao com banco de dados dentro de APP
 app.db = db
 
-consign({ cwd: 'src'})
+consign()
+    .include('./config/passport.js') // method authenticate
     .then('./config/middlewares.js')
     .then('./api/validation.js') // API de validações ( tem que ser importada antes das APIs)
     .then('./api')

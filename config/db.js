@@ -1,4 +1,4 @@
-const config = require('../../knexfile.js')
+const config = require('../knexfile.js')
 const knex = require('knex')(config)  //(config['production']) //(config.production)
 
 // outro método de rodar as migrations
