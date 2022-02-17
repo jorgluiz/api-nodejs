@@ -6,7 +6,10 @@
 //        .post(user.save)
 // }
 
+const admin = require('./admin')
+
 module.exports = app => {
+
 
     app.post('/signin', app.api.auth.signin)
     app.post('/signup', app.api.user.save)
@@ -15,23 +18,23 @@ module.exports = app => {
     // crud usuários
     app.route('/users')
         .all(app.config.passport.authenticate())
-        .post(app.api.user.save)
+        .post(admin(app.api.user.save))
 
     app.route('/users')
         .all(app.config.passport.authenticate())
-        .get(app.api.user.getAllUsers)
+        .get(admin(app.api.user.getAllUsers))
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .put(app.api.user.updateUserId)
+        .put(admin(app.api.user.updateUserId))
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .get(app.api.user.getById)
+        .get(admin(app.api.user.getById))
 
     app.route('/users/:id')
         .all(app.config.passport.authenticate())
-        .delete(app.api.user.removeById)
+        .delete(admin(app.api.user.removeById))
 
 
 

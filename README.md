@@ -42,3 +42,11 @@ será o segredo para gerar chave JWT (token)
     implementar // //      passaport-jwt 
     - todos os serviços depende da autenticação
     - Users ter acesso aos serviços, precisa do token de autenticação
+
+# middleware verificar se user é admin
+    - /admin.js
+    função simples verificar se user é admin, se for tem acesso aos serviços determinados
+
+# mongoDB
+  implementação da página inicial  Dashboard 
+  - extrair informações do banco relacional e inserir no mongoDB
